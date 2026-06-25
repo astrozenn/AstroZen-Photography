@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>AstroZen Photography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrap">
+    <header>
+        <h1>Pachete Foto</h1>
+        <p>Alege un pachet gata definit sau configurează-ți ședința foto cu opțiuni flexibile.</p>
+    </header>
+
+    <div class="package-grid">
+        <div class="card">
+            <h2>Pachet Standard</h2>
+
+            <ul>
+                <li>Livrare in 72h in format online</li>
+                <li>Sedinta foto de 1.30h - 2.30h</li>
+                <li>Editare basic si corectii</li>
+            </ul>
+
+            <h3>150 Lei</h3>
+
+            <form class="package-form" id="standard-form">
+                <input type="hidden" name="package" value="Pachet Standard">
+                <input type="hidden" name="price" value="150">
+
+                <div class="form-group">
+                    <label for="standard-name">Nume</label>
+                    <input id="standard-name" name="name" type="text" placeholder="Ex. Andreea Paula" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="standard-email">Email</label>
+                    <input id="standard-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="standard-message">Mesaj</label>
+                    <textarea id="standard-message" name="message" rows="4" placeholder="Spune ce tip de ședință foto dorești..." required></textarea>
+                </div>
+
+                <button class="submit-btn" type="submit">Trimite cererea</button>
+                <p class="note">Mesajul va fi deschis în clientul tău de email și trimis către astrozenphoto@gmail.com.</p>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Pachet Creativ</h2>
+            <ul>
+                <li>Livrare in 24h in format online</li>
+                <li>Sedinta foto pana la terminarea pozelor</li>
+                <li>Editare avansata cu color grading cinematic</li>
+                <li>Posing artistic ghidat</li>
+            </ul>
+
+            <h3>250 Lei</h3>
+
+            <form class="package-form" id="creative-form">
+                <input type="hidden" name="package" value="Pachet Creativ">
+                <input type="hidden" name="price" value="250">
+
+                <div class="form-group">
+                    <label for="creative-name">Nume</label>
+                    <input id="creative-name" name="name" type="text" placeholder="Ex. Andreea Paula" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="creative-email">Email</label>
+                    <input id="creative-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="creative-message">Mesaj</label>
+                    <textarea id="creative-message" name="message" rows="4" placeholder="Spune ce tip de ședință foto dorești..." required></textarea>
+                </div>
+
+                <button class="submit-btn" type="submit">Trimite cererea</button>
+                <p class="note">Mesajul va fi deschis în clientul tău de email și trimis către astrozenphoto@gmail.com.</p>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Pachet Personalizat</h2>
+            <p class="package-note">Include posing ghidat cu preț de pornire 50 Lei.</p>
+
+            <form id="personal-form" class="package-form">
+                <div class="options-group">
+                    <details class="option-section">
+                        <summary>Efecte speciale</summary>
+                        <label>
+                            <input type="checkbox" value="25" name="option">
+                            Filtru creativ: Black & White | +25 Lei
+                        </label>
+                        <label>
+                            <input type="checkbox" value="30" name="option">
+                            EXPERIMENTAL | Filtru creativ: Fisheye | +30 Lei
+                        </label>
+                        <label>
+                            <input type="checkbox" value="45" name="option">
+                            Lumini artificiale | +45 Lei
+                        </label>
+                    </details>
+
+                    <details class="option-section">
+                        <summary>Formatul fotografiilor</summary>
+                        <label>
+                            <input type="checkbox" value="40" name="option">
+                            Fotografii pe stick USB | +40 Lei
+                        </label>
+                        <label>
+                            <input type="checkbox" value="20" name="option">
+                            Fotografii in format online | +20 Lei
+                        </label>
+                    </details>
+
+                    <details class="option-section">
+                        <summary>Livrare</summary>
+                        <label>
+                            <input type="radio" value="45" name="delivery">
+                            Livrare în 24h | +45 Lei
+                        </label>
+                        <label>
+                            <input type="radio" value="25" name="delivery">
+                            Livrare în 72h | +25 Lei
+                        </label>
+                    </details>
+
+                    <details class="option-section">
+                        <summary>Durata sedintei</summary>
+                        <label>
+                            <input type="radio" value="40" name="duration">
+                            Sedinta foto de 1.30h | +40 Lei
+                        </label>
+                        <label>
+                            <input type="radio" value="75" name="duration">
+                            Sedinta foto de 3h | +75 Lei
+                        </label>
+                        <label>
+                            <input type="radio" value="100" name="duration">
+                            Sesiune pana la terminarea pozelor | +100 Lei
+                        </label>
+                    </details>
+
+                    <details class="option-section">
+                        <summary>Retușuri și corecții</summary>
+                        <label>
+                            <input type="checkbox" value="40" name="option">
+                            Retușuri faciale/imperfectiuni | +40 Lei
+                        </label>
+                        <label>
+                            <input type="checkbox" value="20" name="option">
+                            Editare basic si corectii | +20 Lei
+                        </label>
+                        <label>
+                            <input type="checkbox" value="45" name="option">
+                            Editare artistica cu color grading cinematic | +45 Lei
+                        </label>
+                    </details>
+                </div>
+
+                <h3>Total: <span id="price">0</span> Lei</h3>
+
+                <input type="hidden" name="package" value="Pachet Personalizat">
+                <input type="hidden" name="basePrice" value="50">
+
+                <div class="form-group">
+                    <label for="personal-name">Nume</label>
+                    <input id="personal-name" name="name" type="text" placeholder="Ex. Andreas Paul" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personal-email">Email</label>
+                    <input id="personal-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personal-message">Mesaj</label>
+                    <textarea id="personal-message" name="message" rows="4" placeholder="Spune-ne ce tip de ședință foto dorești..." required></textarea>
+                </div>
+
+                <button class="submit-btn" type="submit">Trimite cererea</button>
+                <p class="note">Mesajul va fi deschis în clientul tău de email și trimis către astrozenphoto@gmail.com.</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
