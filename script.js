@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const personalForm = document.getElementById("personal-form");
     const personalInputs = personalForm ? personalForm.querySelectorAll("input[type='checkbox'], input[type='radio']") : [];
     const forms = document.querySelectorAll(".package-form");
+    const contactForm = document.getElementById("contact-form");
 
     function getBasePrice() {
         if (!personalForm) {
@@ -44,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const message = form.querySelector("[name='message']").value.trim();
             const packageName = form.querySelector("[name='package']").value;
             const fixedPrice = form.querySelector("[name='price']");
-            
+
             let total;
             let selectedOptions = "N/A";
-            
+
             if (fixedPrice) {
                 total = fixedPrice.value;
             } else {
@@ -65,6 +66,33 @@ document.addEventListener("DOMContentLoaded", function() {
             window.open(mailtoLink);
         });
     });
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = contactForm.querySelector("[name='name']").value.trim();
+            const email = contactForm.querySelector("[name='email']").value.trim();
+            const message = contactForm.querySelector("[name='message']").value.trim();
+            const subject = encodeURIComponent("Mesaj de pe site");
+            const body = encodeURIComponent(`Nume: ${name}\nEmail: ${email}\n\nMesaj:\n${message}`);
+            const mailtoLink = `mailto:astrozenphoto@gmail.com?subject=${subject}&body=${body}`;
+            window.open(mailtoLink);
+        });
+    }
+
+    const hero = document.querySelector(".page-hero");
+    if (hero) {
+        const applyHeroBlur = () => {
+            const progress = Math.min(1, Math.max(0, (window.scrollY - hero.offsetTop + 120) / Math.max(1, hero.offsetHeight - 220)));
+            const blur = progress * 22;
+            document.documentElement.style.setProperty("--hero-blur", `${blur}px`);
+        };
+
+        window.addEventListener("scroll", applyHeroBlur, { passive: true });
+        window.addEventListener("resize", applyHeroBlur);
+        applyHeroBlur();
+    }
 
     updatePrice();
 });

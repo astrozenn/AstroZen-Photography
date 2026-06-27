@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | AstroZen Photography</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-shell">
+        <nav class="topbar" aria-label="Navigare principală">
+            <a class="brand" href="index.html">AstroZen</a>
+            <div class="topbar-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="packages.html">Packages</a>
+                <a class="nav-link active" href="contact.html">Contact</a>
+                <a class="nav-link" href="https://astrozenportfolio.myportfolio.com/portfolio" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            </div>
+        </nav>
+
+        <main class="contact-page">
+            <section class="contact-card">
+                <p class="eyebrow">Contact</p>
+                <h1>Let's talk about your next session!</h1>
+                <p>
+                    If you want to book a shot, fill out the form and I'll get back to you as soon as possible.
+                </p>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" placeholder="Your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Tell me about what you'd like to discuss..." required></textarea>
+                    </div>
+
+                    <button class="submit-btn" type="submit">Send!</button>
+                </form>
+
+                <div class="contact-links">
+                    <a class="icon-link" href="https://www.instagram.com/astrozen.photography/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.75-3.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg>
+                    </a>
+                    <a class="icon-link" href="mailto:astrozenphoto@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm0 2v1.2l8 4.8 8-4.8V8H4Zm16 10V10.8l-7.2 4.3a1 1 0 0 1-.8 0L4 10.8V18h16Z"/></svg>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
