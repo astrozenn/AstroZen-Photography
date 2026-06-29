@@ -26,6 +26,10 @@ body {
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: var(--text);
     overflow-x: hidden;
+padding-top: -70px;
+
+
+
     background:
         radial-gradient(circle at top left, rgba(255, 102, 0, 0.16), transparent 24%),
         radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.16), transparent 24%),
@@ -61,7 +65,9 @@ body {
     max-width: 1220px;
     margin: 0 auto;
     padding: 28px 24px 48px;
+    z-index: 1;
 }
+
 
 .topbar {
     display: flex;
@@ -594,7 +600,7 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     align-items: fit;
 }

@@ -1,0 +1,78 @@
+/* Waterfall side galleries */
+.wf-shell {
+  position: relative;
+  display: block;
+}
+
+.wf-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+
+
+.wf-grid.wf-left { left: -210px; }
+.wf-grid.wf-right { right: -210px; }
+
+/* Make sure the right column actually positions correctly and isn't hidden */
+.wf-right { pointer-events: none; }
+.wf-right .wf-track { transform: translateZ(0); }
+
+
+/* Ensure right-side column isn't clipped */
+.wf-right .wf-track { overflow: visible; }
+
+
+@media (max-width: 1100px) {
+  .wf-grid { display: none; }
+}
+
+.wf-track {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  gap: 0px;
+  align-items: start;
+  will-change: transform;
+  animation: wf-scroll var(--wf-duration, 30s) linear infinite;
+}
+
+
+
+.wf-track-clone {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.wf-left .wf-track { animation-direction: normal; }
+.wf-right .wf-track { animation-direction: reverse; }
+
+@keyframes wf-scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+.wf-item {
+  margin: 0;
+  padding: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.671);
+  background: rgba(0,0,0,0.2);
+  pointer-events: auto;
+}
+
+.wf-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
