@@ -96,3 +96,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updatePrice();
 });
+
+window.onload = function () {
+
+    const images = document.querySelectorAll(".testimonial-attachment-img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const close = document.getElementById("close");
+
+    images.forEach(image => {
+        image.onclick = function () {
+            lightbox.style.display = "flex";
+            lightboxImage.src = this.src;
+        };
+    });
+
+    close.onclick = function () {
+        lightbox.style.display = "none";
+    };
+
+    lightbox.onclick = function (e) {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    };
+
+};
