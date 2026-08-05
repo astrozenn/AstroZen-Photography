@@ -6,8 +6,8 @@ export default async function handler(req, res) {
 
         console.log("FUNCTION START");
 
-        const supabaseUrl = process.env.SUPABASE_URL;
-        const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+        const supabaseUrl = process.env.KEY_SUPABASE_URL;
+        const supabaseKey = process.env.KEY_SUPABASE_SERVICE_ROLE_KEY;
 
         console.log({
             url: !!supabaseUrl,
@@ -17,14 +17,14 @@ export default async function handler(req, res) {
 
         if (!supabaseUrl) {
             return res.status(500).json({
-                error: "SUPABASE_URL missing"
+                error: "KEY_SUPABASE_URL missing"
             });
         }
 
 
         if (!supabaseKey) {
             return res.status(500).json({
-                error: "SUPABASE_SERVICE_ROLE_KEY missing"
+                error: "KEY_SUPABASE_SERVICE_ROLE_KEY missing"
             });
         }
 
