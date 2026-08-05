@@ -303,55 +303,92 @@ document.addEventListener("DOMContentLoaded", function() {
             majoratDiscountStatus.textContent = 'Reducere: nicio reducere aplicată';
         }
     }
-
-    async function applyDiscountCode() {
-        if (!majoratDiscountCodeInput || !majoratForm) {
-            return;
-        }
-
-        const rawCode = (majoratDiscountCodeInput.value || '').trim().toUpperCase();
-        const email = "";
-        if (!rawCode) {
-            appliedDiscount = { code: '', percent: 0, value: 0 };
-            updateDiscountStatus();
-            updateMajoratPrice();
-            return;
-        }
-
-        try {
-            const response = await fetch('/api/discount/validate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    code: rawCode
-                })
-            });
-
-            const result = await response.json();
-            if (!response.ok || !result.valid) {
-                appliedDiscount = { code: '', percent: 0, value: 0 };
-                majoratDiscountStatus.textContent = `Reducere: ${result.error || 'Cod invalid'}`;
-                updateMajoratPrice();
-                return;
-            }
-
-            appliedDiscount = {
-                code: result.code,
-                percent: Number(result.percent || 0),
-                value: 0
-            };
-            updateDiscountStatus();
-            updateMajoratPrice();
-        } catch (error) {
-            appliedDiscount = { code: '', percent: 0, value: 0 };
-            majoratDiscountStatus.textContent = 'Reducere: eroare la validarea codului';
-            updateMajoratPrice();
-        }
+async function applyDiscountCode() {
+    if (!majoratDiscountCodeInput || !majoratForm) {
+        return;
     }
 
-    function setMajoratHours(nextValue) {
+    const code = (majoratDiscountCodeInput.value || '').trim().toUpperCase();
+
+    const emailInput = majoratForm.querySelector("[name='email']");
+    const email = emailInput ? emailInput.value.trim().toLowerCase() : "";
+
+
+    if (!code) {
+        appliedDiscount = {
+            code: '',
+            percent: 0,
+            value: 0
+        };
+
+        updateDiscountStatus();
+        updateMajoratPrice();
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch("/api/discount/validate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                code,
+                email
+            })
+        });
+
+
+        const result = await response.json();
+
+
+        if (!response.ok || !result.valid) {
+
+            appliedDiscount = {
+                code: '',
+                percent: 0,
+                value: 0
+            };
+
+            majoratDiscountStatus.textContent =
+                `Reducere: ${result.error || "Cod invalid"}`;
+
+            updateMajoratPrice();
+
+            return;
+        }
+
+
+        appliedDiscount = {
+            code: result.code,
+            percent: Number(result.percent || 0),
+            value: 0
+        };
+
+
+        updateDiscountStatus();
+        updateMajoratPrice();
+
+
+    } catch (error) {
+
+        console.error("Discount error:", error);
+
+        appliedDiscount = {
+            code: '',
+            percent: 0,
+            value: 0
+        };
+
+        majoratDiscountStatus.textContent =
+            "Reducere: eroare la validarea codului";
+
+        updateMajoratPrice();
+    }
+}
+setMajoratHours(nextValue) {
         if (!majoratHoursInput || !majoratHoursReadout) {
             return;
         }
