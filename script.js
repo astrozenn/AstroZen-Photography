@@ -452,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 if (appliedDiscount.code && appliedDiscount.percent > 0) {
     try {
-        await fetch('/api/discount/redeem', {
+        const redeemResponse = await fetch('/api/discount/redeem', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -462,17 +462,15 @@ if (appliedDiscount.code && appliedDiscount.percent > 0) {
                 email
             })
         });
+
+        const redeemResult = await redeemResponse.json();
+
+        if (!redeemResponse.ok) {
+            alert(redeemResult.error || "Codul a fost deja folosit");
+            return;
+        }
     } catch (error) {
         console.log("Discount redeem failed:", error);
-    }
-}
-
-    const redeemResult = await redeemResponse.json();
-
-
-    if (!redeemResponse.ok) {
-        alert(redeemResult.error || "Codul a fost deja folosit");
-        return;
     }
 }
             } else if (fixedPrice) {
@@ -534,7 +532,6 @@ if (appliedDiscount.code && appliedDiscount.percent > 0) {
     updatePrice();
     updateMajoratPrice();
 });
-
 window.onload = function () {
 
     const images = document.querySelectorAll(".testimonial-attachment-img");
