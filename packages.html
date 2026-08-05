@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pachete | AstroZen Photography</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBC5EY3X2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBC5EY3X2T');
+    </script>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-shell">
+        <nav class="topbar" aria-label="Navigare principală">
+            <div class="brand-stack">
+                <a class="brand" href="index.html">AstroZen / Darius Iulian</a>
+                <a class="location-link" href="https://maps.app.goo.gl/BzXkdwgYqPbpN6wd7">📍 BRĂILA, ROMÂNIA</a>
+            </div>
+            <div class="topbar-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="packages.html">Pachete</a>
+                <a class="nav-link" href="https://astrozenportfolio.myportfolio.com/portfolio" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            </div>
+        </nav>
+
+        <section class="page-intro">
+            <u><p class="eyebrow">Pachete Valabile</p></u>
+            <h1>Alege pachetul ideal pentru experiența ta foto</h1>
+            <p>Alege pachetul potrivit acum!</p>
+            <button type="button" class="packages-highlight-banner" aria-label="Mergi la configuratorul de majorat">
+                <span class="banner-pill">🎂 Majorate</span>
+                <p>Fac și evenimente de tip Majorat, cu configurator personalizat și preț calculat în funcție de locație, ore și opțiuni.</p>
+                <span class="banner-arrow" aria-hidden="true">↓</span>
+            </button>
+        </section>
+<br>
+        <section class="package-grid">
+            <div class="card">
+                <div class="featured-tags">
+                    <span class="tag">💰 Preț Accesibil</span>
+                    <span class="tag">⏱️ Rapid</span>
+                </div>
+                <h3>Pachet Standard</h3>
+                <ul>
+                    <li>✓ <strong>Livrare în 72h</strong> în format online</li>
+                    <li>✓ <strong>Sesiune foto de 1.30h</strong></li>
+                    <li>✓ <strong>Editare basic și corecții</strong></li>
+                </ul>
+                <div class="price-highlight">
+                    <h4>149.99 Lei</h4>
+                </div>
+
+                <form class="package-form" id="standard-form">
+                    <input type="hidden" name="package" value="Pachet Standard">
+                    <input type="hidden" name="price" value="149.99">
+
+                    <div class="form-group">
+                        <label for="standard-name">Nume</label>
+                        <input id="standard-name" name="name" type="text" placeholder="Ex. Andreea Paula" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="standard-email">Email</label>
+                        <input id="standard-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="standard-message">Mesaj</label>
+                        <textarea id="standard-message" name="message" rows="4" placeholder="Cateva detalii despre sedinta ta foto..." required></textarea>
+                    </div>
+
+                    <button class="submit-btn featured-btn" type="submit">📸 Alege Pachetul Standard</button>
+                    <p class="note">Mesajul va fi deschis în clientul tău de email și trimis către astrozenphoto@gmail.com.</p>
+                </form>
+            </div>
+
+            <div class="card featured">
+                <div class="popular-badge">⭐ Recomandarea Fotografului</div>
+                <div class="featured-tags">
+                    <span class="tag">⚡ Artistic</span>
+                    <span class="tag">🚀 Livrare Rapidă</span>
+                </div>
+                <h3>Pachet Creativ</h3>
+                <ul>
+                    <li>✓ <strong>Livrare în 24h</strong> în format online</li>
+                    <li>✓ <strong>Sesiune foto nelimitată</strong> până la terminarea pozelor</li>
+                    <li>✓ <strong>Editare avansată cu color grading cinematic</strong></li>
+                    <li>✓ <strong>Posing artistic ghidat</strong> de profesionist</li>
+                </ul>
+                <div class="price-highlight">
+                    <h4>249.99 Lei</h4>
+                </div>
+
+                <form class="package-form" id="creative-form">
+                    <input type="hidden" name="package" value="Pachet Creativ">
+                    <input type="hidden" name="price" value="249.99">
+
+                    <div class="form-group">
+                        <label for="creative-name">Nume</label>
+                        <input id="creative-name" name="name" type="text" placeholder="Ex. Paul Peana" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creative-email">Email</label>
+                        <input id="creative-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creative-message">Mesaj</label>
+                        <textarea id="creative-message" name="message" rows="4" placeholder="Cateva detalii despre sedinta ta foto..." required></textarea>
+                    </div>
+
+                    <button class="submit-btn featured-btn" type="submit">🎬 Alege Pachetul Creativ</button>
+                    <p class="note">Mesajul va fi deschis în clientul tău de email și trimis către astrozenphoto@gmail.com.</p>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="featured-tags">
+                    <span class="tag">🎨 Customizabil</span>
+                    <span class="tag">✨ Control Total</span>
+                </div>
+                <h3>Pachet Personalizat</h3>
+                <p class="package-note">✓ <strong>Include posing ghidat cu preț de pornire 50 Lei</strong></p>
+
+                <form id="personal-form" class="package-form">
+                    <div class="options-group">
+                        <details class="option-section">
+                            <summary>Efecte speciale</summary>
+                            <label>
+                                <input type="checkbox" value="25" name="option">
+                                Filtru creativ: Black & White | +25 Lei
+                            </label>
+                            <label>
+                                <input type="checkbox" value="45" name="option">
+                                Lumini artificiale | +45 Lei
+                            </label>
+                        </details>
+
+                        <details class="option-section">
+                            <summary>Formatul fotografiilor</summary>
+                            <label>
+                                <input type="checkbox" value="70" name="option">
+                                Fotografii pe stick USB | +70 Lei
+                            </label>
+                            <label>
+                                <input type="checkbox" value="20" name="option">
+                                Fotografii în format online | +20 Lei
+                            </label>
+                            <label>
+                                <input type="checkbox" value="85" name="option">
+                                Fotografii în format online si pe stick USB | +85 Lei
+                            </label>
+                        </details>
+
+                        <details class="option-section">
+                            <summary>Livrare</summary>
+                            <label>
+                                <input type="radio" value="45" name="delivery">
+                                Livrare în 24h | +45 Lei
+                            </label>
+                            <label>
+                                <input type="radio" value="25" name="delivery">
+                                Livrare în 72h | +25 Lei
+                            </label>
+                        </details>
+
+                        <details class="option-section">
+                            <summary>Durata sesiunii</summary>
+                            <label>
+                                <input type="radio" value="40" name="duration">
+                                Sesiune foto de 1.30h | +40 Lei
+                            </label>
+                            <label>
+                                <input type="radio" value="75" name="duration">
+                                Sesiune foto de 3h | +75 Lei
+                            </label>
+                            <label>
+                                <input type="radio" value="100" name="duration">
+                                Timp nelimitat până la terminarea pozelor | +100 Lei
+                            </label>
+                        </details>
+
+                        <details class="option-section">
+                            <summary>Retușuri și corecții</summary>
+                            <label>
+                                <input type="checkbox" value="40" name="option">
+                                Retușuri faciale/imperfectiuni | +80 Lei
+                            </label>
+                            <label>
+                                <input type="checkbox" value="20" name="option">
+                                Editare basic și corecții | +20 Lei
+                            </label>
+                            <label>
+                                <input type="checkbox" value="45" name="option">
+                                Editare artistică cu color grading cinematic | +45 Lei
+                            </label>
+                        </details>
+                    </div>
+
+                    <div class="price-highlight">
+                        <h4>Total: <span id="price">0</span> Lei</h4>
+                    </div>
+
+                    <input type="hidden" name="package" value="Pachet Personalizat">
+                    <input type="hidden" name="basePrice" value="50">
+
+                    <div class="form-group">
+                        <label for="personal-name">Nume</label>
+                        <input id="personal-name" name="name" type="text" placeholder="Ex. Andreas Paul" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personal-email">Email</label>
+                        <input id="personal-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personal-message">Mesaj</label>
+                        <textarea id="personal-message" name="message" rows="4" placeholder="Cateva detalii despre sedinta ta foto..." required></textarea>
+                    </div>
+
+                    <button class="submit-btn featured-btn" type="submit">🛠️ Alege Pachetul Personalizat</button>
+                </form>
+            </div>
+
+            <div class="card majorat-card" id="majorat-configurator">
+                <div class="majorat-layout">
+                    <div class="majorat-copy">
+                        <div class="featured-tags">
+                            <span class="tag">🎉 Eveniment</span>
+                            <span class="tag">🌐 Customizabil</span>
+                        </div>
+                        <h3>Eveniment de tip Majorat</h3>
+                        <ul>
+                            <strong>Sunt incluse urmatoarele:</strong>
+                            <br>
+                            <li>✓ <strong>4 ore de serviciu</strong> de la începutul evenimentului până la venirea tortului</li>
+                            <li>✓ <strong>Galerie online</strong></li>
+                            <li>✓ <strong>Livrare in 7-14 zile</strong></li>
+                            <li>✓ <strong>Poze Editate</strong></li>
+                        </ul>
+
+                        <div class="majorat-location-card">
+                            <p class="majorat-location-title">Locație eveniment</p>
+                            <label class="location-label" for="majorat-location">Adresă completă</label>
+                            <div class="location-field-wrap">
+                                <input id="majorat-location" class="location-input" type="text" placeholder="Ex. Str. Libertății 12, Brăila" autocomplete="off">
+                                <div id="majorat-location-suggestions" class="location-suggestions hidden" aria-label="Sugestii locație"></div>
+                            </div>
+                            <label class="location-unknown-option" for="majorat-location-unknown">
+                                <input id="majorat-location-unknown" type="checkbox">
+                                Nu pot preciza momentan
+                            </label>
+                            <button class="location-btn" id="majorat-location-btn" type="button">Calculează distanța</button>
+                            <p id="majorat-distance-text" class="location-readout">Distanță: 0 km</p>
+                            <p id="majorat-distance-cost" class="location-readout">Taxă kilometraj: 0 lei</p>
+                        </div>
+
+                        <div class="majorat-discount-card">
+                            <p class="majorat-location-title">Cod discount</p>
+                            <label class="location-label" for="majorat-discount-code">Introdu codul primit</label>
+                            <div class="discount-field-row">
+                                <input id="majorat-discount-code" class="location-input" type="text" autocomplete="off">
+                                <button class="discount-apply-btn" id="majorat-discount-btn" type="button">Aplică</button>
+                            </div>
+                            <p id="majorat-discount-status" class="location-readout">Reducere: nicio reducere aplicată</p>
+                        </div>
+                    </div>
+
+                    <form id="majorat-form" class="package-form majorat-form">
+                        <input type="hidden" name="package" value="Majorat Personalizat">
+                        <input type="hidden" name="basePrice" value="450">
+
+                        <div class="majorat-options">
+                            <details class="option-section" open>
+                                <summary>Format poze</summary>
+                                <label>
+                                    <input type="radio" value="0" name="photoFormat" checked>
+                                    Galerie online | Inclus în preț
+                                </label>
+                                <label>
+                                    <input type="radio" value="75" name="photoFormat">
+                                    Galerie online + Poze pe stick USB | +75 Lei
+                                </label>
+                            </details>
+
+                            <details class="option-section" open>
+                                <summary>Livrare</summary>
+                                <label>
+                                    <input type="radio" value="0" name="delivery" checked>
+                                    Livrare în 7–14 zile | Inclus in pret
+                                </label>
+                                <label>
+                                    <input type="radio" value="75" name="delivery">
+                                    Livrare în 3–4 zile | +75 Lei
+                                </label>
+                                <label>
+                                    <input type="radio" value="150" name="delivery">
+                                    Livrare în 24–48h | +150 Lei
+                                </label>
+                            </details>
+
+                            <details class="option-section" open>
+                                <summary>Personalizări</summary>
+                                <label>
+                                    <input type="checkbox" value="150" name="option">
+                                    Photoshoot personal înaintea începerii majoratului | +150 Lei
+                                </label>
+                            </details>
+                        </div>
+
+                        <div class="counter-block">
+                            <div class="counter-group">
+                                <button type="button" class="counter-btn" data-action="decrease" aria-label="Scade ore suplimentare">−</button>
+                                <div class="counter-value" id="majorat-hours-readout">0</div>
+                                <button type="button" class="counter-btn" data-action="increase" aria-label="Crește ore suplimentare">+</button>
+                            </div>
+                            <div class="counter-meta">
+                                <p class="counter-label">Ore suplimentare</p>
+                                <span class="counter-hint">100 de ron per ora, peste cele 4 incluse, maxim 5</span>
+                            </div>
+                            <input type="hidden" id="majorat-hours" name="extraHours" value="0">
+                        </div>
+
+                        <div class="price-highlight majorat-price-highlight">
+                            <span class="price-label">Total estimat</span>
+                            <h4><span id="majorat-price">450</span> Lei</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="majorat-name">Nume</label>
+                            <input id="majorat-name" name="name" type="text" placeholder="Ex. Elena Popescu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="majorat-email">Email</label>
+                            <input id="majorat-email" name="email" type="email" placeholder="exemplu@domain.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="majorat-message">Mesaj</label>
+                            <textarea id="majorat-message" name="message" rows="4" placeholder="Detalii despre evenimentul tău, preferințe, locatie și cerințe..." required></textarea>
+                        </div>
+
+                        <button class="submit-btn featured-btn" type="submit">Trimite Cererea!</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="social-bar" aria-label="Social Media și Contact">
+            <a href="https://www.instagram.com/astrozen.photography/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="icon-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.75-3.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg>
+            </a>
+            <a href="mailto:astrozenphoto@gmail.com" aria-label="Email" class="icon-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm0 2v1.2l8 4.8 8-4.8V8H4Zm16 10V10.8l-7.2 4.3a1 1 0 0 1-.8 0L4 10.8V18h16Z"/></svg>
+            </a>
+             <a href="https://www.facebook.com/ZenythDrs" aria-label="Facebook" class="icon-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v3H7v4h3v5h4v-5h3l1-4h-4V8c0-.6.4-1 1-1Z"/></svg>
+            </a>
+             <a href="https://www.tiktok.com/@astrozen.photography" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="icon-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.89 2.89 0 1 1-5.92-2.32 2.88 2.88 0 0 1 2.31 1.39V9.58a6.57 6.57 0 1 0 5.97 6.74V10.1a8.25 8.25 0 0 0 5.09 1.86v-3.27z"/></svg>
+            </a>
+    </div>
+    
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "astrozen-site",
+  "version": "1.0.0",
+  "description": "AstroZen photography site with review backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+  "express": "^4.19.2",
+  "multer": "^1.4.5-lts.1",
+  "@supabase/supabase-js": "^2.0.0"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

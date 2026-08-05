@@ -1,0 +1,87 @@
+        <section class="testimonials" aria-label="Recenzii clienți">
+            <div class="testimonials-header">
+                <h1 class="eyebrow">Recenzii</h1>
+                <p>De la clienți ca tine!</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-author">
+                        <div>
+                            <div class="testimonial-name">Sanke</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                        <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        “Professional &amp; high quality photographer. He knows his bussiness and he’s not afraid to show it. Definitely recommend it!”
+                    </blockquote>
+
+                    <div class="testimonial-attachments" aria-hidden="true">
+                        <img class="testimonial-attachment-img" src="1.jpg" alt="Sanke - review attachment 1">
+                        <img class="testimonial-attachment-img" src="2.jpg" alt="Sanke - review attachment 2">
+                        <img class="testimonial-attachment-img" src="3.jpg" alt="Sanke - review attachment 3">
+                        <img class="testimonial-attachment-img" src="4.jpg" alt="Sanke - review attachment 4">
+                    </div>
+                </article>
+
+               <article class="testimonial-card">
+                    <div class="testimonial-author">
+                        <div>
+                            <div class="testimonial-name">andrrreca</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-stars" aria-label="4.5 out of 5 stars">
+                        <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">⯪</span>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        “pt un incepator servicii chiar ok!! intr-adevar mai are de invatat pe parcurs dar asta numai daca veti apela la serviciile lui ca sa l ajutati sa capete experienta!! kisses”
+                    </blockquote>
+
+                    <div class="testimonial-attachments" aria-hidden="true">
+                        <img class="testimonial-attachment-img" src="22.jpg" alt="andrrreca - review attachment 1">
+                        <img class="testimonial-attachment-img" src="23.jpg" alt="andrrreca - review attachment 2">
+                        <img class="testimonial-attachment-img" src="25.jpg" alt="andrrreca - review attachment 3">
+                    </div>
+                </article>
+
+               <article class="testimonial-card">
+                    <div class="testimonial-author">
+                        <div>
+                            <div class="testimonial-name">Claudiu Gavrila</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                        <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        “Fotograf de nota 10. Este very professional si super de treaba . Si preturile care le cere sunt foarte bune . Cu siguranta voi mai apela la el . Keep up the good work”
+                    </blockquote>
+
+                    <div class="testimonial-attachments" aria-hidden="true">
+                        <img class="testimonial-attachment-img" src="9.jpg" alt="Claudiu Gavrila - review attachment 1">
+                        <img class="testimonial-attachment-img" src="10.jpg" alt="Claudiu Gavrila - review attachment 2">
+                        <img class="testimonial-attachment-img" src="11.jpg" alt="Claudiu Gavrila - review attachment 3">
+                        <img class="testimonial-attachment-img" src="12.jpg" alt="Claudiu Gavrila - review attachment 3">
+                    </div>
+                </article>
+            </div>
+
+        <section class="testimonials" aria-label="Recenzii clienți">
+            <div class="testimonials-header">
+                <h1 class="eyebrow">Parteneri</h1>
+                <p>Oameni care au ajutat pe parcurs.</p>
+                <a href="https://www.scripticx.org" target="_blank" rel="noopener noreferrer">
+                    <img src="scripticx.png" alt="Scripticx Logo" class="partner-logo">
+                </a>
+            </div>
+
+            <div class="testimonials-cta">
+                <div class="testimonials-cta-text">

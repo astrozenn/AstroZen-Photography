@@ -1,0 +1,19 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+.vercel
+.env*

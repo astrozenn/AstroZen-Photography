@@ -1,0 +1,17 @@
+{
+  "MAJORAT10": {
+    "code": "MAJORAT10",
+    "percent": 10,
+    "active": true
+  },
+  "MAJORAT20": {
+    "code": "MAJORAT20",
+    "percent": 20,
+    "active": true
+  },
+  "BRILA25": {
+    "code": "BRILA25",
+    "percent": 25,
+    "active": true
+  }
+}
