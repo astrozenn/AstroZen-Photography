@@ -486,7 +486,7 @@ if (appliedDiscount.code && appliedDiscount.percent > 0) {
             );
 
             const mailtoLink = `mailto:astrozenphoto@gmail.com?subject=${subject}&body=${body}`;
-            window.open(mailtoLink);
+            window.location.href = mailtoLink;
         });
     });
 
@@ -511,7 +511,7 @@ if (appliedDiscount.code && appliedDiscount.percent > 0) {
             const subject = encodeURIComponent("Mesaj de pe site");
             const body = encodeURIComponent(`Nume: ${name}\nEmail: ${email}\n\nMesaj:\n${message}`);
             const mailtoLink = `mailto:astrozenphoto@gmail.com?subject=${subject}&body=${body}`;
-            window.open(mailtoLink);
+            window.location.href = mailtoLink;
         });
     }
 
