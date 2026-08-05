@@ -1,11 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-    process.env.KEY_SUPABASE_URL,
-    process.env.KEY_SUPABASE_SERVICE_ROLE_KEY
-);
-
-
 export default async function handler(req, res) {
 
     if (req.method !== "POST") {
@@ -15,109 +9,132 @@ export default async function handler(req, res) {
     }
 
 
-    const body = req.body || {};
+    try {
 
-    const code = String(body.code || "").trim().toUpperCase();
-    const email = String(body.email || "").trim().toLowerCase();
-
-
-    if (!code || !email) {
-        return res.status(400).json({
-            valid: false,
-            error: "Lipsesc datele"
-        });
-    }
+        const supabase = createClient(
+            process.env.SUPABASE_URL,
+            process.env.SUPABASE_SERVICE_ROLE_KEY
+        );
 
 
-    const discounts = {
-        MAJORAT10: {
-            code: "MAJORAT10",
-            percent: 10,
-            active: true
-        },
-        MAJORAT20: {
-            code: "MAJORAT20",
-            percent: 20,
-            active: true
-        },
-        BRILA25: {
-            code: "BRILA25",
-            percent: 25,
-            active: true
+        const body = req.body || {};
+
+
+        const code = String(body.code || "")
+            .trim()
+            .toUpperCase();
+
+
+        const email = String(body.email || "")
+            .trim()
+            .toLowerCase();
+
+
+
+        if (!code || !email) {
+            return res.status(400).json({
+                valid: false,
+                error: "Lipsesc datele"
+            });
         }
-    };
 
 
-    const discount = discounts[code];
+
+        const discounts = {
+            MAJORAT10: 10,
+            MAJORAT20: 20,
+            BRILA25: 25
+        };
 
 
-    if (!discount || !discount.active) {
-        return res.status(404).json({
-            valid: false,
-            error: "Cod invalid"
-        });
-    }
+        const discountPercent = discounts[code];
 
 
-    // verifică dacă email-ul a mai folosit codul
-    const { data: existing, error: checkError } = await supabase
-        .from("discount_redemptions")
-        .select("*")
-        .eq("code", code)
-        .eq("email", email)
-        .maybeSingle();
+        if (!discountPercent) {
+            return res.status(404).json({
+                valid: false,
+                error: "Cod invalid"
+            });
+        }
 
 
-   if (checkError) {
-    console.log("SUPABASE CHECK ERROR:", checkError);
 
-    return res.status(500).json({
-        valid: false,
-        error: checkError.message
-    });
-}
-
-
-    if (existing) {
-        return res.status(409).json({
-            valid: false,
-            error: "Ai folosit deja acest cod"
-        });
-    }
+        // verifică dacă email-ul a mai folosit codul
+        const { data: existing, error: checkError } = await supabase
+            .from("discount_redemptions")
+            .select("*")
+            .eq("code", code)
+            .eq("email", email)
+            .maybeSingle();
 
 
-    // salvează folosirea codului
-   const { data, error: insertError } = await supabase
-    .from("discount_redemptions")
-    .insert([
-        {
+
+        if (checkError) {
+
+            console.log("SUPABASE CHECK ERROR:", checkError);
+
+            return res.status(500).json({
+                valid: false,
+                error: checkError.message
+            });
+
+        }
+
+
+
+        if (existing) {
+
+            return res.status(409).json({
+                valid: false,
+                error: "Ai folosit deja acest cod"
+            });
+
+        }
+
+
+
+        // salvează folosirea codului
+        const { error: insertError } = await supabase
+            .from("discount_redemptions")
+            .insert([
+                {
+                    code,
+                    email
+                }
+            ]);
+
+
+
+        if (insertError) {
+
+            console.log("SUPABASE INSERT ERROR:", insertError);
+
+            return res.status(500).json({
+                valid: false,
+                error: insertError.message
+            });
+
+        }
+
+
+
+        return res.json({
+            success: true,
             code,
-            email
-        }
-    ])
-    .select();
+            percent: discountPercent
+        });
 
 
-if (insertError) {
-    console.log("SUPABASE INSERT ERROR:", insertError);
 
-    return res.status(500).json({
-        valid: false,
-        error: insertError.message
-    });
-}
-    if (insertError) {acum
+    } catch (error) {
+
+        console.log("ERROR:", error);
+
         return res.status(500).json({
             valid: false,
-            error: "Nu s-a putut salva reducerea"
+            error: error.message
         });
+
     }
-
-
-    return res.json({
-        success: true,
-        code: discount.code,
-        percent: discount.percent
-    });
 
 }

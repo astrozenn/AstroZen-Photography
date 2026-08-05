@@ -388,7 +388,7 @@ async function applyDiscountCode() {
         updateMajoratPrice();
     }
 }
-setMajoratHours(nextValue); {
+function setMajoratHours(nextValue) {
         if (!majoratHoursInput || !majoratHoursReadout) {
             return;
         }

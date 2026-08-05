@@ -1,3 +1,4 @@
+import "dotenv/config";
 const response = await fetch("http://localhost:3000/api/discount/validate", {
     method: "POST",
     headers: {
