@@ -451,18 +451,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 selectedOptions += `; Locație: ${locationText || "Nu a fost furnizată"}; Distanță: ${majoratDistanceKm.toFixed(1)} km; Taxă kilometraj: ${majoratDistanceFee.toFixed(2)} lei${discountText}`;
 
 if (appliedDiscount.code && appliedDiscount.percent > 0) {
-
-    const redeemResponse = await fetch('/api/discount/redeem', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            code: appliedDiscount.code,
-            email
-        })
-    });
-
+    try {
+        await fetch('/api/discount/redeem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: appliedDiscount.code,
+                email
+            })
+        });
+    } catch (error) {
+        console.log("Discount redeem failed:", error);
+    }
+}
 
     const redeemResult = await redeemResponse.json();
 
