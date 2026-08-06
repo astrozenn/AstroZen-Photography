@@ -260,7 +260,9 @@
                             </label>
                             <button class="location-btn" id="majorat-location-btn" type="button">Calculează distanța</button>
                             <p id="majorat-distance-text" class="location-readout">Distanță: 0 km</p>
-                            <p id="majorat-distance-cost" class="location-readout">Taxă kilometraj: 0 lei</p>
+                            <p id="majorat-distance-cost" class="location-readout">Taxă kilometraj: 0 lei
+  <p id="majorat-distance-cost" class="location-readout">2 Lei / Kmh
+                            </p>
                         </div>
 
                         <div class="majorat-discount-card">
@@ -270,13 +272,13 @@
                                 <input id="majorat-discount-code" class="location-input" type="text" autocomplete="off">
                                 <button class="discount-apply-btn" id="majorat-discount-btn" type="button">Aplică</button>
                             </div>
-                            <p id="majorat-discount-status" class="location-readout">Reducere: nicio reducere aplicată</p>
+                            <p id="majorat-discount-status" class="location-readout">Reducere: Nicio reducere aplicată.</p>
                         </div>
                     </div>
 
                     <form id="majorat-form" class="package-form majorat-form">
                         <input type="hidden" name="package" value="Majorat Personalizat">
-                        <input type="hidden" name="basePrice" value="450">
+                        <input type="hidden" name="basePrice" value="550">
 
                         <div class="majorat-options">
                             <details class="option-section" open>
@@ -286,8 +288,8 @@
                                     Galerie online | Inclus în preț
                                 </label>
                                 <label>
-                                    <input type="radio" value="75" name="photoFormat">
-                                    Galerie online + Poze pe stick USB | +75 Lei
+                                    <input type="radio" value="100" name="photoFormat">
+                                    Galerie online + Poze pe stick USB | +100 Lei
                                 </label>
                             </details>
 
@@ -295,11 +297,7 @@
                                 <summary>Livrare</summary>
                                 <label>
                                     <input type="radio" value="0" name="delivery" checked>
-                                    Livrare în 7–14 zile | Inclus in pret
-                                </label>
-                                <label>
-                                    <input type="radio" value="75" name="delivery">
-                                    Livrare în 3–4 zile | +75 Lei
+                                    Livrare în 7–14 zile | Inclus în preț
                                 </label>
                                 <label>
                                     <input type="radio" value="150" name="delivery">
@@ -311,7 +309,7 @@
                                 <summary>Personalizări</summary>
                                 <label>
                                     <input type="checkbox" value="150" name="option">
-                                    Photoshoot personal înaintea începerii majoratului | +150 Lei
+                                    Ședință foto personală înaintea începerii majoratului | +150 Lei
                                 </label>
                             </details>
                         </div>
@@ -324,19 +322,19 @@
                             </div>
                             <div class="counter-meta">
                                 <p class="counter-label">Ore suplimentare</p>
-                                <span class="counter-hint">100 de ron per ora, peste cele 4 incluse, maxim 5</span>
+                                <span class="counter-hint">150 de lei per ora, peste cele 4 incluse, maxim 5</span>
                             </div>
                             <input type="hidden" id="majorat-hours" name="extraHours" value="0">
                         </div>
 
                         <div class="price-highlight majorat-price-highlight">
                             <span class="price-label">Total estimat</span>
-                            <h4><span id="majorat-price">450</span> Lei</h4>
+                            <h4><span id="majorat-price">550</span> Lei</h4>
                         </div>
 
                         <div class="form-group">
                             <label for="majorat-name">Nume</label>
-                            <input id="majorat-name" name="name" type="text" placeholder="Ex. Elena Popescu" required>
+                            <input id="majorat-name" name="name" type="text" placeholder="Ex. Paul Peana" required>
                         </div>
 
                         <div class="form-group">

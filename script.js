@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const forms = document.querySelectorAll(".package-form");
     const contactForm = document.getElementById("contact-form");
     const baseVenue = { lat: 45.26609, lon: 27.95552 };
+    const interactiveButtons = Array.from(document.querySelectorAll("button, input[type='button'], input[type='submit'], .btn, .submit-btn, .location-btn, .discount-apply-btn, .counter-btn, .icon-link, .location-suggestion-item"));
+    const buttonEffectTimers = new WeakMap();
     const distanceRate = 2;
     let majoratDistanceKm = 0;
     let majoratDistanceFee = 0;
@@ -40,6 +42,48 @@ document.addEventListener("DOMContentLoaded", function() {
         const baseInput = form.querySelector('input[name="basePrice"]');
         return baseInput ? Number(baseInput.value) : basePrice;
     }
+
+    function triggerButtonEffect(event) {
+        const target = event.currentTarget;
+        if (!target) {
+            return;
+        }
+
+        const existingTimer = buttonEffectTimers.get(target);
+        if (existingTimer) {
+            window.clearTimeout(existingTimer);
+        }
+
+        target.classList.remove("button-pressed");
+        void target.offsetWidth;
+        target.classList.add("button-pressed");
+
+        const rect = target.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const burst = document.createElement("span");
+        burst.className = "button-burst";
+        burst.style.left = `${x}px`;
+        burst.style.top = `${y}px`;
+        burst.style.setProperty("--dx", String((Math.random() * 80 - 40).toFixed(1)));
+        burst.style.setProperty("--dy", String((Math.random() * 80 - 40).toFixed(1)));
+        document.body.appendChild(burst);
+
+        window.setTimeout(() => {
+            burst.remove();
+        }, 700);
+
+        const removeTimer = window.setTimeout(() => {
+            target.classList.remove("button-pressed");
+            buttonEffectTimers.delete(target);
+        }, 400);
+
+        buttonEffectTimers.set(target, removeTimer);
+    }
+
+    interactiveButtons.forEach((button) => {
+        button.addEventListener("click", triggerButtonEffect);
+    });
 
     function updatePrice() {
         const total = getBasePrice(personalForm) + Array.from(personalInputs).reduce((sum, input) => {
@@ -282,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const optionsTotal = Array.from(majoratInputs).reduce((sum, input) => {
             return sum + (input.checked ? Number(input.value) : 0);
         }, 0);
-        const subtotal = base + extraHours * 100 + optionsTotal + majoratDistanceFee;
+        const subtotal = base + extraHours * 150 + optionsTotal + majoratDistanceFee;
         const discountAmount = Math.round((subtotal * (appliedDiscount.percent || 0)) / 100);
         const total = Math.max(0, subtotal - discountAmount);
 
@@ -367,6 +411,14 @@ async function applyDiscountCode() {
             value: 0
         };
 
+        if (majoratDiscountButton) {
+            majoratDiscountButton.classList.remove("is-success");
+            void majoratDiscountButton.offsetWidth;
+            majoratDiscountButton.classList.add("is-success");
+            window.setTimeout(() => {
+                majoratDiscountButton.classList.remove("is-success");
+            }, 800);
+        }
 
         updateDiscountStatus();
         updateMajoratPrice();

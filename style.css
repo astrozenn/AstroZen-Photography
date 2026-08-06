@@ -231,6 +231,79 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+button,
+input[type="button"],
+input[type="submit"],
+.btn,
+.submit-btn,
+.location-btn,
+.discount-apply-btn,
+.counter-btn,
+.icon-link,
+.location-suggestion-item {
+    position: relative;
+    isolation: isolate;
+    transform-origin: center bottom;
+    will-change: transform, box-shadow;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+.btn:active,
+.submit-btn:active,
+.location-btn:active,
+.discount-apply-btn:active,
+.counter-btn:active,
+.icon-link:active,
+.location-suggestion-item:active,
+.button-pressed {
+    animation: button-jump 0.38s cubic-bezier(0.2, 0.9, 0.2, 1.05);
+}
+
+@keyframes button-jump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    30% {
+        transform: translateY(-6px) scale(1.03);
+    }
+    55% {
+        transform: translateY(2px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.button-burst {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 9999;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 179, 71, 0.95) 30%, rgba(255, 102, 0, 0.16) 70%, transparent 100%);
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+    animation: burst-pop 0.7s ease-out forwards;
+}
+
+@keyframes burst-pop {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0.95;
+    }
+    50% {
+        transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(0.2);
+        opacity: 0;
+    }
+}
+
 .btn:hover {
     transform: translateY(-2px);
 }
@@ -503,6 +576,34 @@ body {
     padding: 10px 14px;
     font-weight: 700;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background 0.45s ease;
+}
+
+.discount-apply-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 102, 0, 0.24);
+}
+
+.discount-apply-btn.is-success {
+    animation: coupon-success 0.75s ease-in-out;
+}
+
+@keyframes coupon-success {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.16);
+        filter: saturate(1);
+    }
+    40% {
+        transform: scale(1.03);
+        box-shadow: 0 0 20px 8px rgba(255, 102, 0, 0.24);
+        filter: saturate(1.15);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+        filter: saturate(1);
+    }
 }
 
 .majorat-form {
